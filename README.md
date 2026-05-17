@@ -4,7 +4,7 @@ A clean archtiecture and well documented gin boilerplate with lot of good featur
 ready for you to use and improve your speed of development 
 
 ## requirements
-make sure you installed [docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/)
+make sure you installed [docker](https://docs.docker.com/engine/install/) and [docker compose](https://docs.docker.com/compose/install/)
 
 ## Installation 
 clone repository in your system
@@ -20,16 +20,16 @@ if you want to run on localhost set `Environment=development` and if you want to
 
 create docker volume for database data `docker volume create psql_data`
 
-build and run docker-compose  
-for development:`docker-compose up -d` <br />
-for production: `docker-compose -f docker-compose.prod.yml up -d` 
+build and run docker compose
+for development:`docker compose up -d` <br />
+for production: `docker compose -f docker-compose.prod.yml up -d`
 
 run migrations 
 ```
 make migrate-up
 ```
 
-see docker logs `docker-compose logs -f` and wait for your application to be ready and check your application work by sending get request to `localhost:port/api/ping` (default port is 8000)<br />
+see docker logs `docker compose logs -f` and wait for your application to be ready and check your application work by sending get request to `localhost:port/api/ping` (default port is 8000)<br />
 
 ### swagger
 install [gin swagger](https://github.com/swaggo/gin-swagger) .<br/>
@@ -47,8 +47,8 @@ we have an infrastracture for env in `core/infrastracture/env.go` that is respon
 #### dependency injection
 we used [uber fx](https://github.com/uber-go/fx) for dependency injection to have more clean application I sugget you read whole documention of fx package
 #### docker compose implemention for development and production 
-for production use set `Environment=production` and use `docker-compose -f docker-compose.prod.yml up -d ` to run app
-for development set `Environment=development` and use `docker-compose up -d ` to run app
+for production use set `Environment=production` and use `docker compose -f docker-compose.prod.yml up -d ` to run app
+for development set `Environment=development` and use `docker compose up -d ` to run app
 #### delve debugger + source watcher for reload   
 we have a powerful source watcher for reload server and delve debuger configuration <br />
 `docker/dev/web.sh` handle watching and running delve server you can use configuration in `.vscode` directory for configure your vscode to connect to debugger for debugging in normal and  even debugging your tests
@@ -99,4 +99,3 @@ you can use these command for running tests
 `make test-all-debugger`: run all tests of application with delve debugger server so you can connect your editor/IDE to it for debugging
 
 `make kill-test-debugger`: kill opened test delve debugger server 
-

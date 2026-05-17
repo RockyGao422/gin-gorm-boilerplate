@@ -9,6 +9,7 @@ require (
 	github.com/go-playground/validator/v10 v10.10.1
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/golang-migrate/migrate/v4 v4.15.1
+	github.com/hibiken/asynq v0.23.0
 	github.com/ip2location/ip2location-go/v9 v9.2.0
 	github.com/joho/godotenv v1.4.0
 	github.com/lib/pq v1.10.2
@@ -45,7 +46,6 @@ require (
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/hashicorp/errwrap v1.0.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.0 // indirect
-	github.com/hibiken/asynq v0.23.0 // indirect
 	github.com/jackc/chunkreader/v2 v2.0.1 // indirect
 	github.com/jackc/pgconn v1.11.0 // indirect
 	github.com/jackc/pgio v1.0.0 // indirect

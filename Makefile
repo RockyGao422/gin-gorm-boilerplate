@@ -1,8 +1,8 @@
 include .env
 ifeq ($(Environment),development)
-DOCKER_COMMAND=docker-compose
+DOCKER_COMMAND=docker compose
 else 
-DOCKER_COMMAND=docker-compose -f docker-compose.prod.yml
+DOCKER_COMMAND=docker compose -f docker-compose.prod.yml
 endif
 MIGRATE=${DOCKER_COMMAND} exec web migrate -path=core/migrations -database "postgres://${DBUsername}:${DBPassword}@${DBHost}:${DBPort}/${DBName}?sslmode=disable" -verbose
 
