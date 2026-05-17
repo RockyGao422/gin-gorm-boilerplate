@@ -1,4 +1,4 @@
-FROM golang:1.17-alpine
+FROM golang:1.26.3-alpine
 
 # Required because go requires gcc to build
 RUN apk add build-base
@@ -29,6 +29,6 @@ RUN --mount=type=cache,mode=0755,target=/go/pkg/mod go mod download -x -json
 RUN --mount=type=cache,mode=0755,target=/go/pkg/mod go mod vendor
 
 
-RUN go get github.com/go-delve/delve/cmd/dlv@master
+RUN go install github.com/go-delve/delve/cmd/dlv@v1.26.1
 
 CMD sh /clean_web/docker/dev/web.sh
